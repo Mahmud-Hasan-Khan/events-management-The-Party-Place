@@ -5,7 +5,7 @@ import logoImg from "../../assets/Logo.png"
 import profilePic from "../../assets/placeholder.jpg"
 
 const Navbar = () => {
-    const user = true;
+    const user = false;
 
     const navLinks = <div className='space-x-3 font-bold flex text-[#023e7d]'>
         <li>
@@ -17,7 +17,6 @@ const Navbar = () => {
         <li>
             <NavLink to='/blog' className={({ isActive }) => (isActive ? 'border-b-2 border-[#f97316] text-[#f97316] ' : '')}>Home</NavLink>
         </li>
-
     </div>
 
 
@@ -40,22 +39,23 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end space-x-2">
-                <img
-                    className='rounded-full'
-                    src={user && user?.photoURL ? user.photoURL : profilePic}
-                    alt='profile'
-                    height='34'
-                    width='34'
-                />
                 {
                     user ?
                         <>
-                            <Link className='bg-[#f97316] px-2 py-1 rounded-xl text-white font-medium' to="login">Log Out</Link>
+                            <img
+                                className='rounded-full'
+                                src={user?.photoURL}
+                                alt='profile'
+                                height='34'
+                                width='34'
+                            />
+                            <Link className='bg-[#f97316] px-2 py-1 rounded-xl text-white font-medium' to="/login">Log Out</Link>
                             <p>{user?.displayName} </p>
                         </>
                         :
                         <>
-                            <Link className='bg-[#f97316] px-2 py-1 rounded-xl text-white font-medium' to="login">Login</Link>
+                            <Link className='bg-[#f97316] px-2 py-1 rounded-xl text-white font-medium' to="/login">Login</Link>
+                            <Link className='bg-[#f97316] px-2 py-1 rounded-xl text-white font-medium' to="/register">Register</Link>
                         </>
                 }
             </div>
