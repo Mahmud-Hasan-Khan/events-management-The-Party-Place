@@ -1,4 +1,3 @@
-import loginImg from "../../assets/logo.png"
 import { useContext, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ImSpinner3 } from 'react-icons/im'
@@ -8,14 +7,13 @@ import Swal from "sweetalert2";
 
 
 const Login = () => {
-    const loading = false;
 
-    const { loginWithEmailPassword } = useContext(UserContext);
+    const { loginWithEmailPassword, loading } = useContext(UserContext);
 
     const [showPassword, setShowPassword] = useState(false);
     const [loginError, setLoginError] = useState(null)
-    const navigate = useNavigate()
-    const location = useLocation()
+    const navigate = useNavigate();
+    const location = useLocation();
     const from = location.state?.from?.pathname || '/'
 
     useEffect(() => {
@@ -48,8 +46,10 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                 })
+                // form reset 
                 form.email.value = '';
                 form.password.value = '';
+                navigate("/")
             })
             .catch((error) => {
                 const errorMessage = error.message;
@@ -90,7 +90,6 @@ const Login = () => {
                                         className='w-full px-3 py-3 border rounded-md border-gray-300 focus:outline-[#00AEEF] bg-base-100 text-gray-900'
                                         data-temp-mail-org='0'
                                     />
-                                    {/* {errors.email && <p className="text-red-500">Email is required</p>} */}
                                 </div>
 
                                 <div>
@@ -123,8 +122,6 @@ const Login = () => {
                                             )}
                                         </button>
                                     </div>
-                                    {/* {errors.password && <p className="text-red-500">Password is required</p>} */}
-
                                 </div>
                             </div>
 

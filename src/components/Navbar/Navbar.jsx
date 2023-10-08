@@ -1,10 +1,30 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../Provider/AuthProviders';
+import Swal from 'sweetalert2';
 
 const Navbar = () => {
-    const { loggedInUser } = useContext(UserContext);
+    const { loggedInUser, logOut } = useContext(UserContext);
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        logOut()
+            .then(() => {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Logout Successful!',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                navigate("/")
+            })
+            .catch((error) => {
+                // An error happened.
+                console.log(error.message);
+            })
+    }
 
     const navLinks = <div className='space-x-3 font-bold flex text-[#023e7d]'>
         <li>
@@ -49,7 +69,7 @@ const Navbar = () => {
                                 height='34'
                                 width='34'
                             />
-                            <Link className='bg-[#f97316] px-2 py-1 rounded-xl text-white font-medium' to="/login">Log Out</Link>
+                            <Link onClick={handleLogout} className='bg-[#f97316] px-2 py-1 rounded-xl text-white font-medium' to="/login">Log Out</Link>
                         </>
                         :
                         <>

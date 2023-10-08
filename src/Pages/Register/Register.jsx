@@ -4,10 +4,11 @@ import { UserContext } from "../../Provider/AuthProviders";
 import Swal from "sweetalert2";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../../firebase/firebase.config";
+import { ImSpinner3 } from "react-icons/im";
 
 const Register = () => {
 
-    const { createUser } = useContext(UserContext);
+    const { createUser, loading } = useContext(UserContext);
     const [errorReg, setErrorReg] = useState('');
     const [showPassword, setShowPassword] = useState(false);
 
@@ -152,7 +153,13 @@ const Register = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6 max-w-[558px]">
-                            <button className="bg-orange-600 font-medium text-white py-3 rounded-lg hover:bg-orange-700">Register</button>
+                            <button className="bg-orange-600 font-medium text-white py-3 rounded-lg hover:bg-orange-700">
+                                {loading ? (
+                                    <ImSpinner3 className='m-auto animate-spin' size={24} />
+                                ) : (
+                                    'Register'
+                                )}
+                            </button>
                         </div>
                         <p className="font-semibold text-center">Already have an account ? <Link to="/login" className="text-white">Login</Link></p>
                     </form>
