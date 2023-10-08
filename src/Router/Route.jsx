@@ -6,6 +6,7 @@ import ErrorPage from '../Pages/ErrorPage/ErrorPage';
 import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
+import ServiceDetails from '../Pages/Home/Services/ServiceDetails';
 
 const myCreatedRoute = createBrowserRouter([
     {
@@ -24,6 +25,11 @@ const myCreatedRoute = createBrowserRouter([
             {
                 path: "/register",
                 element: <Register></Register>
+            },
+            {
+                path: "/serviceDetails/:id",
+                element: <ServiceDetails></ServiceDetails>,
+                loader: () => fetch('./data.json')
             }
         ]
     }
