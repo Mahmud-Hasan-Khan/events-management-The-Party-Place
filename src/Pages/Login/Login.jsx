@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 
 const Login = () => {
 
-    const { loginWithEmailPassword, loading } = useContext(UserContext);
+    const { signInWithGoogle, loginWithEmailPassword, loading } = useContext(UserContext);
 
     const [showPassword, setShowPassword] = useState(false);
     const [loginError, setLoginError] = useState(null)
@@ -56,6 +56,29 @@ const Login = () => {
                 console.log(error);
                 setLoginError(errorMessage)
             })
+    }
+
+    const handleGoogleLogin = () => {
+        signInWithGoogle()
+            .then((userCredential) => {
+                const loggedUser = userCredential.user;
+                console.log(loggedUser);
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Login Successful!',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+
+                navigate("/")
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                console.log(error);
+                setLoginError(errorMessage)
+            })
+
     }
 
     return (
@@ -138,7 +161,7 @@ const Login = () => {
                                 </button>
                             </div>
                             <div className="divider">OR</div>
-                            <div
+                            <div onClick={handleGoogleLogin}
                                 className='flex justify-center items-center space-x-2 border p-2 border-gray-300 border-rounded rounded-md cursor-pointer bg-[#4081ec] text-white'
                             >
                                 <FcGoogle className='bg-white rounded-full' size={32} />
