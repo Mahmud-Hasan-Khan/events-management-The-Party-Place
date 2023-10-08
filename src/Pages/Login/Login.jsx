@@ -1,23 +1,68 @@
 import loginImg from "../../assets/logo.png"
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ImSpinner3 } from 'react-icons/im'
 import { FcGoogle } from 'react-icons/fc'
+import { UserContext } from "../../Provider/AuthProviders";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
-    const loading = false
+    const loading = false;
+
+    const { loginWithEmailPassword } = useContext(UserContext);
 
     const [showPassword, setShowPassword] = useState(false);
+    const [loginError, setLoginError] = useState(null)
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || '/'
 
+    useEffect(() => {
+        if (loginError) {
+            Swal.fire({
+                icon: 'error',
+                text: loginError
+            });
+        }
+    }, [loginError]);
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        // const form = (e.currentTarget);
+        // const email = form.get('email');
+        // const password = form.get('password');
+        const form = e.currentTarget;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+
+        loginWithEmailPassword(email, password)
+            .then((userCredential) => {
+                const loggedUser = userCredential.user;
+                console.log(loggedUser);
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Login Successful!',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                form.email.value = '';
+                form.password.value = '';
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                console.log(error);
+                setLoginError(errorMessage)
+            })
+    }
+
     return (
         <div>
-            <div className='font-Poppins flex flex-col-reverse lg:flex-row py-4 gap-0 items-center justify-center bg-[#00AEEF] h-screen'>
+            <div className='flex flex-col-reverse lg:flex-row py-4 gap-2 items-center justify-center bg-[#00AEEF] h-screen'>
 
-                <div className='shadow-2xl rounded-s-lg py-9 max-h-[540px] '>
+                <div className=''>
                     <img src={loginImg} alt="" data-aos="fade-up" />
                 </div>
                 <div className='flex justify-center items-center' >
@@ -27,7 +72,7 @@ const Login = () => {
                             <h1 className='my-3 text-4xl font-bold text-[#00AEEF]'>Login</h1>
                         </div>
                         <form
-                            // onSubmit={handleSubmit(onSubmit)}
+                            onSubmit={handleLogin}
                             noValidate=''
                             action=''
                             className='space-y-6 ng-untouched ng-pristine ng-valid'
@@ -38,8 +83,8 @@ const Login = () => {
                                         Email address
                                     </label>
                                     <input
-
                                         type='email'
+                                        name="email"
                                         id='email'
                                         required
                                         placeholder='Enter Your Email Address'
@@ -57,7 +102,7 @@ const Login = () => {
                                         <input
                                             type={showPassword ? 'text' : 'password'}
                                             placeholder='*******'
-                                            // {...register('password', { required: true })}
+                                            name="password"
                                             id='password'
                                             required
                                             className='w-full px-3 py-2 focus:outline-[#fff] bg-base-100'
@@ -96,20 +141,14 @@ const Login = () => {
                                     )}
                                 </button>
                             </div>
+                            <div className="divider">OR</div>
+                            <div
+                                className='flex justify-center items-center space-x-2 border p-2 border-gray-300 border-rounded rounded-md cursor-pointer bg-[#4081ec] text-white'
+                            >
+                                <FcGoogle className='bg-white rounded-full' size={32} />
+                                <p className='text-center'>Continue with Google</p>
+                            </div>
                         </form>
-
-
-                        <div className="divider">OR</div>
-
-                        <div
-                            // onClick={handleGoogleSignIn}
-                            className='flex justify-center items-center space-x-2 border p-2 border-gray-300 border-rounded rounded-md cursor-pointer bg-[#4081ec] text-white'
-                        >
-                            <FcGoogle className='bg-white rounded-full' size={32} />
-                            <p className='text-center'>Continue with Google</p>
-                        </div>
-
-
                         <p className='px-6 mt-2 text-sm font-medium text-center text-gray-400'>
                             Do not have an account yet?
                             <Link
