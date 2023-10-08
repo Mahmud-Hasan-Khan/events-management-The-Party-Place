@@ -84,7 +84,7 @@ const Login = () => {
     return (
         <div>
             <div className='flex flex-col lg:flex-row py-4 gap-2 items-center justify-center bg-[#00AEEF]'>
-                <div className=''>
+                <div className='' data-aos="fade-up">
                     <img src="https://i.ibb.co/vsHHVgS/Logo.png" alt="" />
                 </div>
                 <div className='flex justify-center items-center' >
