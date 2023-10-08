@@ -60,13 +60,12 @@ const Login = () => {
 
     return (
         <div>
-            <div className='flex flex-col-reverse lg:flex-row py-4 gap-2 items-center justify-center bg-[#00AEEF] h-screen'>
-
+            <div className='flex flex-col lg:flex-row py-4 gap-2 items-center justify-center bg-[#00AEEF]'>
                 <div className=''>
-                    <img src={loginImg} alt="" data-aos="fade-up" />
+                    <img src="https://i.ibb.co/vsHHVgS/Logo.png" alt="" />
                 </div>
                 <div className='flex justify-center items-center' >
-                    <div className='flex flex-col max-h-[540px] max-w-fit px-6 rounded-e-md sm:p-10 shadow-2xl bg-base-100 text-gray-900 relative' data-aos="fade-down">
+                    <div className='flex flex-col px-6 rounded-e-md sm:p-10 shadow-2xl bg-base-100 text-gray-900 relative' data-aos="fade-down">
                         <h1 className='text-3xl font-bold text-white bg-[#00AEEF] absolute top-4 left-0 px-2 rounded-e-xl'>Welcome Back</h1>
                         <div className='mt-10 md:mt-0 md:mb-2 text-center'>
                             <h1 className='my-3 text-4xl font-bold text-[#00AEEF]'>Login</h1>

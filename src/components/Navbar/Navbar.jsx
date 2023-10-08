@@ -1,11 +1,10 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import logoImg from "../../assets/Logo.png"
-import profilePic from "../../assets/placeholder.jpg"
+import { UserContext } from '../../Provider/AuthProviders';
 
 const Navbar = () => {
-    const user = false;
+    const { loggedInUser } = useContext(UserContext);
 
     const navLinks = <div className='space-x-3 font-bold flex text-[#023e7d]'>
         <li>
@@ -31,7 +30,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <Link to="/"> <img className='w-16' src={logoImg} alt="" /> </Link>
+                <Link to="/"> <img className='w-16' src="https://i.ibb.co/64cW3zq/navbar-Logo.png" alt="" /> </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-2">
@@ -40,17 +39,17 @@ const Navbar = () => {
             </div>
             <div className="navbar-end space-x-2">
                 {
-                    user ?
+                    loggedInUser ?
                         <>
+                            <p>{loggedInUser?.displayName} </p>
                             <img
                                 className='rounded-full'
-                                src={user?.photoURL}
+                                src={loggedInUser?.photoURL}
                                 alt='profile'
                                 height='34'
                                 width='34'
                             />
                             <Link className='bg-[#f97316] px-2 py-1 rounded-xl text-white font-medium' to="/login">Log Out</Link>
-                            <p>{user?.displayName} </p>
                         </>
                         :
                         <>
