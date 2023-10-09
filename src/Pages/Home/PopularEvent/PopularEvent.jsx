@@ -2,7 +2,7 @@ import Marquee from "react-fast-marquee";
 
 const PopularEvent = () => {
     return (
-        <div>
+        <div className="shadow-md">
             <h2 className="text-2xl lg:text-5xl font-medium text-center">OUR POPULAR EVENT ITEMS</h2>
             <div className="my-4">
                 <Marquee pauseOnHover>
