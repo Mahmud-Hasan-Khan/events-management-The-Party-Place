@@ -2,8 +2,8 @@
 
 const BrandActivation = () => {
     return (
-        <div className="bg-white">
-            <h3 className="text-4xl font-semibold mt-4">BRAND ACTIVATION AGENCY IN DHAKA</h3>
+        <div className="bg-white px-3 lg:px-4">
+            <h3 className="text-4xl font-semibold mt-4 text-center">BRAND ACTIVATION AGENCY IN DHAKA</h3>
             <h5 className="text-lg font-medium my-5">As a Brand Activation Agency in Dhaka and Bangladesh, we have an excellent track record. We at THE PARTY PLACE understand that it is difficult to plan and execute a working brand activation strategy on your own. This is where we can help. We have the skills and experience in creating a complete brand experience. By planning, designing, managing the products, services and strategies, we will help you build a solid and long-lasting connection with your audience.  We bring your brand to life.</h5>
             <img className="mx-auto" src="https://i.ibb.co/py2sN27/Brand-Activation-Agency-in-Dhaka.jpg" alt="" />
 

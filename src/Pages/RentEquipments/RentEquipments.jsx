@@ -5,7 +5,7 @@ const RentEquipments = () => {
     const RentEquipments = useLoaderData();
     // console.log(RentEquipments);
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-6 mx-auto place-items-center">
             {
                 RentEquipments.map(equipmentItem => <RentEquipmentsCard key={equipmentItem.id} equipmentItem={equipmentItem} ></RentEquipmentsCard>)
             }
