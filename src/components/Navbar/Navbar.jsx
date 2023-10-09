@@ -26,7 +26,7 @@ const Navbar = () => {
             })
     }
 
-    const navLinks = <div className='space-x-3 font-bold flex text-[#023e7d]'>
+    const navLinks = <div className='space-x-3 font-bold text-[#023e7d]'>
         <li>
             <NavLink to='/' className={({ isActive }) => (isActive ? 'border-b-2 border-[#f97316] text-[#f97316] ' : '')}>Home</NavLink>
         </li>
@@ -50,18 +50,26 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <Link to="/"> <img className='w-16' src="https://i.ibb.co/64cW3zq/navbar-Logo.png" alt="" /> </Link>
+                <Link to="/"> <img className='w-12 lg:w-20' src="https://i.ibb.co/64cW3zq/navbar-Logo.png" alt="logo" /> </Link>
             </div>
-            <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-2">
-                    {navLinks}
+            <div className="navbar-center hidden lg:block">
+                <ul className="menu menu-horizontal px-1 space-x-3 font-bold text-[#023e7d]">
+                    <li>
+                        <NavLink to='/' className={({ isActive }) => (isActive ? 'border-b-2 border-[#f97316] text-[#f97316] ' : '')}>Home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/equipmentsRental" className={({ isActive }) => (isActive ? 'border-b-2 border-[#f97316] text-[#f97316] ' : '')}>Event Equipments Rental</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/brandActivation" className={({ isActive }) => (isActive ? 'border-b-2 border-[#f97316] text-[#f97316] ' : '')}>Brand Activation</NavLink>
+                    </li>
                 </ul>
             </div>
-            <div className="navbar-end space-x-2">
+            <div className="navbar-end space-x-1 lg:space-x-2 mr-3 lg:mr-0">
                 {
                     loggedInUser ?
                         <>
-                            <p>{loggedInUser?.displayName} </p>
+                            <p className='text-sm lg:text-base'>{loggedInUser?.displayName}</p>
                             <img
                                 className='rounded-full'
                                 src={loggedInUser?.photoURL}
@@ -69,7 +77,7 @@ const Navbar = () => {
                                 height='34'
                                 width='34'
                             />
-                            <Link onClick={handleLogout} className='bg-[#f97316] px-2 py-1 rounded-xl text-white font-medium' to="/login">Log Out</Link>
+                            <Link onClick={handleLogout} className='bg-[#f97316] px-1 lg:px-2 py-1 rounded-xl text-white text-sm lg:font-medium' to="/login">Log Out</Link>
                         </>
                         :
                         <>
