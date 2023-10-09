@@ -30,7 +30,7 @@ const ServiceDetails = () => {
 
     return (
         <div className="card lg:card-side bg-base-100 border border-orange-100 items-center gap-6 rounded-none">
-            <figure><img className="object-cover w-[650px] h-[500px] " src={image} alt="Album" /></figure>
+            <figure><img className="object-cover lg:w-[650px] lg:h-[500px] " src={image} alt="Album" /></figure>
             <div className="space-y-4 my-auto">
                 <h2 className="text-xl lg:text-4xl font-medium">{name} </h2>
                 <p className="text-xl ">{description} </p>
