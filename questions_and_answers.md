@@ -18,10 +18,9 @@ console.log(greetign);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### A: `{}`
 
-<i>Write your explanation here</i>
-
+<i>This code declares a variable `greeting`, which assigns an empty object `{}` to it, and then logs the empty object to the console, resulting in `{}` being displayed in the console log.</i>
 </p>
 </details>
 
@@ -43,9 +42,9 @@ sum(1, "2");
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### C: `"12"`
 
-<i>Write your explanation here</i>
+<i>Here `sum` function takes two arguments and returns their `sum`. However, when called with `sum(1, "2")`, JavaScript coerces the string "2" into a number, resulting in the string concatenation of "12".</i>
 
 </p>
 </details>
@@ -69,9 +68,9 @@ console.log(food);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### A: `['🍕', '🍫', '🥑', '🍔']`
 
-<i>Write your explanation here</i>
+<i>Here `info.favoriteFood` property is initially assigned the value of `food[0]`, which is the first element of the food array, `"🍕"`. Later, it's reassigned to `"🍝"`, but this doesn't affect the `food` array itself, so `food` remains unchanged. </i>
 
 </p>
 </details>
@@ -94,9 +93,9 @@ console.log(sayHi());
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### B: `Hi there, undefined`
 
-<i>Write your explanation here</i>
+<i>In the `sayHi` function, there's a parameter name that is not provided with a value when you call `sayHi()` in `console.log(sayHi());`. When a parameter is not provided with a value, it defaults to `undefined`. So, the function returns `Hi there, undefined`.</i>
 
 </p>
 </details>
@@ -122,9 +121,9 @@ console.log(count);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### B: 2
 
-<i>Write your explanation here</i>
+<i>Here `forEach` loop, the condition `if (num)` checks if each `num `is truthy. Since `0` is falsy in JavaScript, it doesn't increment `count`. So, the other three numbers `(1, 2, and 3)` are truthy, so `count` gets incremented for each of them. Hence, `count` becomes` 2`</i>
 
 </p>
 </details>
