@@ -12,18 +12,18 @@ const ServiceDetails = () => {
 
     // get specific data id wise
     useEffect(() => {
-        const findDetails = serviceDetails?.find(getDetails => getDetails.id == id);
-        setFoundDetails(findDetails)
+        const findDetails = serviceDetails?.find(getDetails => getDetails.id === id);
+        setFoundDetails(findDetails);
     }, [id, serviceDetails]);
 
-    console.log(foundDetails);
+    // console.log(foundDetails);
 
-    if (!foundDetails || !foundDetails.details) {
-        // Handle the case where foundDetails or details is undefined
-        return <div>Loading...</div>;
+    // Handle the case where foundDetails or details is undefined
+    if (!foundDetails.details) {
+        return <div>Data not found.</div>;
     }
 
-    const { name, description, price, image, } = foundDetails;
+    const { name, description, price, image } = foundDetails;
 
     // Destructure details object
     const { duration, capacity, included_services } = foundDetails.details;
@@ -35,9 +35,7 @@ const ServiceDetails = () => {
                 <h2 className="text-xl lg:text-4xl font-medium">{name} </h2>
                 <p className="text-xl ">{description} </p>
                 <p className="text-xl font-semibold">Price : <small className="text-base">{price}</small></p>
-
                 <p className="text-xl font-semibold">Duration : <small className="text-base">{duration}</small></p>
-
                 <p className="text-xl font-semibold">Capacity : <small className="text-base">{capacity}</small></p>
                 <p className="text-xl font-semibold">Included Services:</p>
                 <ul className="pl-8">

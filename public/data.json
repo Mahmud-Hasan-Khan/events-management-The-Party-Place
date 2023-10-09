@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "id": "1",
         "name": "Wedding Planning",
         "image": "https://i.ibb.co/Bt0C4V5/wedding.jpg",
         "price": "$5,000 - $10,000",
@@ -19,7 +19,7 @@
         }
     },
     {
-        "id": 2,
+        "id": "2",
         "name": "Birthday Party Coordination",
         "image": "https://i.ibb.co/gTk2mD1/birthday.jpg",
         "price": "$500 - $1,000",
@@ -38,7 +38,7 @@
         }
     },
     {
-        "id": 3,
+        "id": "3",
         "name": "Anniversary Celebration",
         "image": "https://i.ibb.co/8MDD863/Anniversary.jpg",
         "price": "$1,000 - $2,000",
@@ -57,7 +57,7 @@
         }
     },
     {
-        "id": 4,
+        "id": "4",
         "name": "Engagement Party Management",
         "image": "https://i.ibb.co/mDvFhCQ/Engagement.jpg",
         "price": "$800 - $1,500",
@@ -76,7 +76,7 @@
         }
     },
     {
-        "id": 5,
+        "id": "5",
         "name": "Retirement Party Planning",
         "image": "https://i.ibb.co/4fJpdcQ/retirement.jpg",
         "price": "$700 - $1,200",
@@ -95,7 +95,7 @@
         }
     },
     {
-        "id": 6,
+        "id": "6",
         "name": "Corporate Event Management",
         "image": "https://i.ibb.co/RB7cp6d/Corporate.jpg",
         "price": "$2,000 - $5,000",

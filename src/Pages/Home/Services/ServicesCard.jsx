@@ -13,7 +13,7 @@ const ServicesCard = ({ services }) => {
                     <p>{description} </p>
                     <p>Price: {price} </p>
                     <div className="card-actions justify-end">
-                        <button className="bg-orange-500 hover:bg-orange-600 flex items-center text-white font-medium rounded p-2"><Link to={`/serviceDetails/${id}`} >View Details</Link> <FcViewDetails /></button>
+                        <Link className="bg-orange-500 hover:bg-orange-600 flex items-center text-white font-medium rounded p-2" to={`/serviceDetails/${id}`} >View Details <FcViewDetails /></Link>
                     </div>
                 </div>
             </div>

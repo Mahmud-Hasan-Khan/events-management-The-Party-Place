@@ -34,11 +34,11 @@ const Banner = () => {
         },
         {
             image: 'https://i.ibb.co/J3jG6nh/Weddings-Lavender-Salon-V4-Desktop.png',
-            text: 'ANNIVERSARY PLANING',
+            text: 'ANNIVERSARY PARTY',
         },
         {
             image: 'https://i.ibb.co/qs2QmV8/Fairy-theme-with-carnival-carousel-horses-aicaevents1.jpg',
-            text: 'BIRTHDAY PLANING',
+            text: 'BIRTHDAY PARTY',
         },
     ];
 

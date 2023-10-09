@@ -32,7 +32,7 @@ const myCreatedRoute = createBrowserRouter([
                 element: <PrivateRoute>
                     <ServiceDetails></ServiceDetails>
                 </PrivateRoute>,
-                loader: () => fetch('./data.json')
+                loader: () => fetch("/data.json")
             }
         ]
     }
