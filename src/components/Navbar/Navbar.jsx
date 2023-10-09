@@ -31,10 +31,10 @@ const Navbar = () => {
             <NavLink to='/' className={({ isActive }) => (isActive ? 'border-b-2 border-[#f97316] text-[#f97316] ' : '')}>Home</NavLink>
         </li>
         <li>
-            <NavLink to='/' className={({ isActive }) => (isActive ? 'border-b-2 border-[#f97316] text-[#f97316] ' : '')}>Home</NavLink>
+            <NavLink to="/equipmentsRental" className={({ isActive }) => (isActive ? 'border-b-2 border-[#f97316] text-[#f97316] ' : '')}>Event Equipments Rental</NavLink>
         </li>
         <li>
-            <NavLink to='/blog' className={({ isActive }) => (isActive ? 'border-b-2 border-[#f97316] text-[#f97316] ' : '')}>Home</NavLink>
+            <NavLink to="/brandActivation" className={({ isActive }) => (isActive ? 'border-b-2 border-[#f97316] text-[#f97316] ' : '')}>Brand Activation</NavLink>
         </li>
     </div>
 

@@ -8,6 +8,8 @@ import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import ServiceDetails from '../Pages/Home/Services/ServiceDetails';
 import PrivateRoute from './PrivateRoute';
+import BrandActivation from '../Pages/BrandActivation/BrandActivation';
+import RentEquipments from '../Pages/RentEquipments/RentEquipments';
 
 const myCreatedRoute = createBrowserRouter([
     {
@@ -33,6 +35,15 @@ const myCreatedRoute = createBrowserRouter([
                     <ServiceDetails></ServiceDetails>
                 </PrivateRoute>,
                 loader: () => fetch("/data.json")
+            },
+            {
+                path: "/brandActivation",
+                element: <PrivateRoute><BrandActivation></BrandActivation></PrivateRoute>
+            },
+            {
+                path: "/equipmentsRental",
+                element: <PrivateRoute><RentEquipments></RentEquipments> </PrivateRoute>,
+                loader: () => fetch("/rentEquipment.json")
             }
         ]
     }

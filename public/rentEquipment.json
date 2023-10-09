@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Sound System",
+        "description": "High-quality sound system with speakers and microphones.",
+        "price_per_day": 150,
+        "price_per_hour": 25,
+        "availability": "Available",
+        "max_rental_duration_hours": 24,
+        "image_url": "https://i.ibb.co/ph8JhNm/sound-system-rental.png"
+    },
+    {
+        "id": 2,
+        "name": "LED Wall Screen",
+        "description": "Large LED wall screen for displaying visuals and presentations.",
+        "price_per_day": 300,
+        "price_per_hour": 50,
+        "availability": "Available",
+        "max_rental_duration_hours": 12,
+        "image_url": "https://i.ibb.co/bdV6jqr/led.png"
+    },
+    {
+        "id": 3,
+        "name": "Projector",
+        "description": "High-resolution projector with HDMI and VGA inputs.",
+        "price_per_day": 100,
+        "price_per_hour": 20,
+        "availability": "Available",
+        "max_rental_duration_hours": 8,
+        "image_url": "https://i.ibb.co/sgP0wNJ/alex-litvin-MAYsdo-Yp-Guk-unsplash.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Television",
+        "description": "Flat-screen television with various screen sizes available.",
+        "price_per_day": 75,
+        "price_per_hour": 15,
+        "availability": "Available",
+        "max_rental_duration_hours": 24,
+        "image_url": "https://i.ibb.co/YjBSRGW/tv-rental.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Microphone Set",
+        "description": "Professional microphone set for events and performances.",
+        "price_per_day": 80,
+        "price_per_hour": 15,
+        "availability": "Available",
+        "max_rental_duration_hours": 12,
+        "image_url": "https://i.ibb.co/gd1GpBT/mic.jpg"
+    },
+    {
+        "id": 6,
+        "name": "DJ Equipment",
+        "description": "Complete DJ equipment setup with turntables and mixer.",
+        "price_per_day": 250,
+        "price_per_hour": 40,
+        "availability": "Available",
+        "max_rental_duration_hours": 8,
+        "image_url": "https://i.ibb.co/7JzzWjR/aleksandr-popov-Jh-Yn-L-Bi-P18-unsplash.jpg"
+    }
+]
