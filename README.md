@@ -39,7 +39,7 @@
 - `404 page` implemented. 
 
 ## Live Site Link
-- [Click Here to Open Live Site](https://party-place-72494.web.app/)
+- [Click Here To Open Live Site](https://party-place-mahmud.netlify.app/login)
 
 ## Screenshots
 
